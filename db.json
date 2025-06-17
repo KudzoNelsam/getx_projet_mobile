@@ -1,28 +1,62 @@
 {
   "clients": [
-    
+    {
+      "id": "6494",
+      "nom": "Nelsam",
+      "telephone": "773461882",
+      "adresse": "Sicap Amitié"
+    }
   ],
   "articles": [
     {
-      "id": 1,
+      "id": "123",
       "libelle": "Stylo",
       "qteStock": 100,
-      "prixVente": 1.5
+      "prixVente": 500
     },
     {
-      "id": 2,
+      "id": "456",
       "libelle": "Cahier",
       "qteStock": 200,
-      "prixVente": 2
+      "prixVente": 300
     }
   ],
   "dettes": [
-   
+    {
+      "montantPaye": 15000,
+      "montantRestant": 0,
+      "id": "e11b"
+    }
   ],
   "lignes": [
-   
+    {
+      "id": "ccff",
+      "qteCom": 30,
+      "articleId": "123",
+      "detteId": "e11b"
+    }
   ],
   "paiements": [
-   
+    {
+      "id": "ee47",
+      "date": "2025-06-17",
+      "montantVerse": 3000,
+      "clientId": "6494",
+      "detteId": "e11b"
+    },
+    {
+      "id": "8ea1",
+      "date": "2025-06-17",
+      "montantVerse": 10000,
+      "clientId": "6494",
+      "detteId": "e11b"
+    },
+    {
+      "id": "3e39",
+      "date": "2025-06-17",
+      "montantVerse": 2000,
+      "clientId": "6494",
+      "detteId": "e11b"
+    }
   ]
 }

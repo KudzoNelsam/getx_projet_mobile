@@ -30,7 +30,7 @@ class DettesListView extends GetView<DettesListController> {
           Obx(() {
             return Padding(
               padding: const EdgeInsets.all(12.0),
-              child: DropdownButtonFormField<int>(
+              child: DropdownButtonFormField<String>(
                 value: controller.selectedClientId.value,
                 isExpanded: true,
                 decoration: const InputDecoration(
@@ -39,12 +39,12 @@ class DettesListView extends GetView<DettesListController> {
                   prefixIcon: Icon(Icons.person),
                 ),
                 items: [
-                  const DropdownMenuItem<int>(
+                  const DropdownMenuItem<String>(
                     value: null,
                     child: Text("Tous les clients"),
                   ),
-                  ...controller.clients.map<DropdownMenuItem<int>>(
-                    (c) => DropdownMenuItem<int>(
+                  ...controller.clients.map<DropdownMenuItem<String>>(
+                    (c) => DropdownMenuItem<String>(
                       value: c['id'],
                       child: Text(c['nom']),
                     ),
@@ -59,15 +59,20 @@ class DettesListView extends GetView<DettesListController> {
               if (controller.isLoading.value) {
                 return const Center(child: CircularProgressIndicator());
               }
-              if (controller.dettes.isEmpty) {
-                return const Center(child: Text('Aucune dette trouvée'));
+              // Filtrer les dettes non payées (montantRestant > 0)
+              final nonPaidDettes = controller.dettes
+                  .where((d) => (d['montantRestant'] ?? 0) > 0)
+                  .toList();
+
+              if (nonPaidDettes.isEmpty) {
+                return const Center(child: Text('Aucune dette à payer trouvée'));
               }
               return ListView.separated(
                 padding: const EdgeInsets.all(16),
                 separatorBuilder: (_, __) => const SizedBox(height: 12),
-                itemCount: controller.dettes.length,
+                itemCount: nonPaidDettes.length,
                 itemBuilder: (context, i) {
-                  final d = controller.dettes[i];
+                  final d = nonPaidDettes[i];
                   final montantRestant = d['montantRestant'] ?? 0;
                   final isPaid = montantRestant <= 0;
                   return Card(
@@ -137,8 +142,10 @@ class DettesListView extends GetView<DettesListController> {
                         ],
                       ),
                       trailing: const Icon(Icons.chevron_right),
-                      onTap: () =>
-                          Get.toNamed(Routes.DETTES_LIST, arguments: d['id']),
+                      onTap: () => Get.toNamed(
+                        Routes.DETTES_DETAIL,
+                        arguments: {'detteId': d['id']},
+                      ),
                     ),
                   );
                 },

@@ -1,9 +1,9 @@
 class Paiement {
-  final int id;
+  final String id;
   final DateTime date;
   final double montantVerse;
-  final int clientId; // ForeignKey Client
-  final int detteId;  // ForeignKey Dette
+  final String clientId; // ForeignKey Client
+  final String detteId;  // ForeignKey Dette
 
   Paiement({
     required this.id,

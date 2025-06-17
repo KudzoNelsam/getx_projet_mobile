@@ -1,10 +1,10 @@
 class Dette {
-  final int id;
+  final String id;
   final DateTime date;
   final double montantDette;
   final double montantPaye;
   final double montantRestant;
-  final int clientId; // ForeignKey Client
+  final String clientId; // ForeignKey Client
 
   Dette({
     required this.id,

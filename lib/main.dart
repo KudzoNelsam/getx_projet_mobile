@@ -6,7 +6,7 @@ import 'package:get/get.dart';
 import 'app/routes/app_pages.dart';
 
 void main() {
-     Get.lazyPut<MainLayoutController>(() => MainLayoutController());
+     Get.put(MainLayoutController());
   runApp(
     GetMaterialApp(
       title: "Application",

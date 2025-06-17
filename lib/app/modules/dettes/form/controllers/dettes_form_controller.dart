@@ -14,8 +14,8 @@ class DettesFormController extends GetxController {
   var clients = [].obs;
   var articles = [].obs;
 
-  var selectedClientId = Rxn<int>();
-  var selectedArticleId = Rxn<int>();
+  var selectedClientId = Rxn<String>();
+  var selectedArticleId = Rxn<String>();
   var qteText = ''.obs;
 
   final qteController = TextEditingController();
@@ -54,7 +54,7 @@ class DettesFormController extends GetxController {
   }
 
   // Si on change de client, on vide le panier
-  void onChangeClient(int? value) {
+  void onChangeClient(String? value) {
     selectedClientId.value = value;
     panier.clear();
     // On reset aussi la sélection d'article et de quantité

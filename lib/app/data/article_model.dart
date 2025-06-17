@@ -1,5 +1,5 @@
 class Article {
-  final int id;
+  final String id;
   final String libelle;
   final int qteStock;
   final double prixVente;

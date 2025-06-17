@@ -67,7 +67,7 @@ class SimpleApiService implements ISimpleApiService {
   }
 
   // Modifier (PUT)
-  Future<RestReponseModel> updateData(String endpoint, int id, Map<String, dynamic> body) async {
+  Future<RestReponseModel> updateData(String endpoint, String id, Map<String, dynamic> body) async {
     final url = Uri.parse('$baseUrl/$endpoint/$id');
     try {
       final response = await http.put(
@@ -98,7 +98,7 @@ class SimpleApiService implements ISimpleApiService {
   }
 
   // Supprimer (DELETE)
-  Future<RestReponseModel> deleteData(String endpoint, int id) async {
+  Future<RestReponseModel> deleteData(String endpoint, String id) async {
     final url = Uri.parse('$baseUrl/$endpoint/$id');
     try {
       final response = await http.delete(url);
@@ -125,7 +125,7 @@ class SimpleApiService implements ISimpleApiService {
   }
   
   @override
-  Future<RestReponseModel> getDataById(String endpoint, int id) {
+  Future<RestReponseModel> getDataById(String endpoint, String id) {
     final url = Uri.parse('$baseUrl/$endpoint/$id');
     return http.get(url).then((response) {
       if (response.statusCode == 200) {

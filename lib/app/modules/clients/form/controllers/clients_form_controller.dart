@@ -11,7 +11,7 @@ class ClientsFormController extends GetxController {
   final adresseController = TextEditingController();
 
   var isLoading = false.obs;
-  int? clientId;
+  String? clientId;
 
   @override
   void onInit() {

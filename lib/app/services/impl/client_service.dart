@@ -12,13 +12,13 @@ class ClientService extends SimpleApiService implements IClientService{
 
 
   @override
-  Future<RestReponseModel> deleteClient(int id) {
+  Future<RestReponseModel> deleteClient(String id) {
     return deleteData("clients", id);
   }
 
 
   @override
-  Future<RestReponseModel> getClientById(int id) {
+  Future<RestReponseModel> getClientById(String id) {
     return getDataById("clients", id);
   }
 
@@ -42,7 +42,7 @@ class ClientService extends SimpleApiService implements IClientService{
   }
 
   @override
-  Future<RestReponseModel> updateClient(int id, Map<String, dynamic> body) {
+  Future<RestReponseModel> updateClient(String id, Map<String, dynamic> body) {
     return updateData("clients", id, body);
   }
 

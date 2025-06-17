@@ -9,7 +9,7 @@ class DettesListController extends GetxController {
   var dettes = [].obs;
   var clients = [].obs;
   var isLoading = false.obs;
-  var selectedClientId = Rxn<int>();
+  var selectedClientId = Rxn<String>();
 
   @override
   void onInit() {
@@ -49,7 +49,7 @@ class DettesListController extends GetxController {
     }
   }
 
-  void filterByClient(int? clientId) {
+  void filterByClient(String? clientId) {
     selectedClientId.value = clientId;
     fetchDettes();
   }

@@ -11,12 +11,12 @@ class ArticleService extends SimpleApiService implements IArticleService{
   }
   
   @override
-  Future<RestReponseModel> deleteArticle(int id) {
+  Future<RestReponseModel> deleteArticle(String id) {
     return deleteData("articles", id);
   }
   
   @override
-  Future<RestReponseModel> getAllArticles({int? clientId}) {
+  Future<RestReponseModel> getAllArticles({String? clientId}) {
     String endpoint = "articles";
     if (clientId != null) {
       endpoint += "?clientId=$clientId";
@@ -25,7 +25,7 @@ class ArticleService extends SimpleApiService implements IArticleService{
   }
   
   @override
-  Future<RestReponseModel> getArticleById(int id) {
+  Future<RestReponseModel> getArticleById(String id) {
     return getDataById("articles", id);
   }
   
@@ -39,7 +39,7 @@ class ArticleService extends SimpleApiService implements IArticleService{
   }
   
   @override
-  Future<RestReponseModel> updateArticle(int id, Map<String, dynamic> body) {
+  Future<RestReponseModel> updateArticle(String id, Map<String, dynamic> body) {
     return updateData("articles", id, body);
   }
 

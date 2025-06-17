@@ -11,12 +11,12 @@ class DetteService extends SimpleApiService implements IDetteService{
   }
   
   @override
-  Future<RestReponseModel> deleteDette(int id) {
+  Future<RestReponseModel> deleteDette(String id) {
     return deleteData("dettes", id);
   }
   
   @override
-  Future<RestReponseModel> getAllDettes({int? clientId}) {
+  Future<RestReponseModel> getAllDettes({String? clientId}) {
     String endpoint = "dettes";
     if (clientId != null) {
       endpoint += "?clientId=$clientId";
@@ -25,7 +25,7 @@ class DetteService extends SimpleApiService implements IDetteService{
   }
   
   @override
-  Future<RestReponseModel> getDetteById(int id) {
+  Future<RestReponseModel> getDetteById(String id) {
     return getDataById("dettes", id);
   }
   
@@ -39,7 +39,7 @@ class DetteService extends SimpleApiService implements IDetteService{
   }
   
   @override
-  Future<RestReponseModel> updateDette(int id, Map<String, dynamic> body) {
+  Future<RestReponseModel> updateDette(String id, Map<String, dynamic> body) {
     return updateData("dettes", id, body);
   }
 

@@ -19,15 +19,15 @@ class DettesFormView extends GetView<DettesFormController> {
           padding: const EdgeInsets.all(18),
           children: [
             // Sélection client
-            Obx(() => DropdownButtonFormField<int>(
+            Obx(() => DropdownButtonFormField<String>(
               value: controller.selectedClientId.value,
               decoration: const InputDecoration(
                 labelText: "Client",
                 border: OutlineInputBorder(),
               ),
               items: controller.clients
-                  .map<DropdownMenuItem<int>>(
-                    (c) => DropdownMenuItem<int>(
+                  .map<DropdownMenuItem<String>>(
+                    (c) => DropdownMenuItem<String>(
                       value: c['id'],
                       child: Text(c['nom']),
                     ),
@@ -44,15 +44,15 @@ class DettesFormView extends GetView<DettesFormController> {
               style: TextStyle(fontWeight: FontWeight.bold),
             ),
             const SizedBox(height: 10),
-            Obx(() => DropdownButtonFormField<int>(
+            Obx(() => DropdownButtonFormField<String>(
               value: controller.selectedArticleId.value,
               decoration: const InputDecoration(
                 labelText: "Article",
                 border: OutlineInputBorder(),
               ),
               items: controller.articles
-                  .map<DropdownMenuItem<int>>(
-                    (a) => DropdownMenuItem<int>(
+                  .map<DropdownMenuItem<String>>(
+                    (a) => DropdownMenuItem<String>(
                       value: a['id'],
                       child: Text("${a['libelle']} (Stock: ${a['qteStock']})"),
                     ),

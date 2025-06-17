@@ -1,8 +1,8 @@
 class Ligne {
-  final int id;
+  final String id;
   final int qteCom;
-  final int articleId; // ForeignKey Article
-  final int detteId;   // ForeignKey Dette
+  final String articleId; // ForeignKey Article
+  final String detteId;   // ForeignKey Dette
 
   Ligne({
     required this.id,

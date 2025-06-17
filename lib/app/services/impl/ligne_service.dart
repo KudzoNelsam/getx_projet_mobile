@@ -11,12 +11,12 @@ class LigneService extends SimpleApiService implements ILigneService{
   }
 
   @override
-  Future<RestReponseModel> deleteLigne(int id) {
+  Future<RestReponseModel> deleteLigne(String id) {
     return deleteData("lignes", id);
   }
 
   @override
-  Future<RestReponseModel> getAllLignes({int? detteId}) {
+  Future<RestReponseModel> getAllLignes({String? detteId}) {
     String endpoint = "lignes";
     if (detteId != null) {
       endpoint += "?detteId=$detteId";
@@ -25,7 +25,7 @@ class LigneService extends SimpleApiService implements ILigneService{
   }
 
   @override
-  Future<RestReponseModel> getLigneById(int id) {
+  Future<RestReponseModel> getLigneById(String id) {
     return getDataById("lignes", id);
   }
 
@@ -39,8 +39,13 @@ class LigneService extends SimpleApiService implements ILigneService{
   }
 
   @override
-  Future<RestReponseModel> updateLigne(int id, Map<String, dynamic> body) {
+  Future<RestReponseModel> updateLigne(String id, Map<String, dynamic> body) {
     return updateData("lignes", id, body);
+  }
+  
+  @override
+  Future<RestReponseModel> getLignesByDetteId(String detteId) {
+    return getData("lignes?detteId=$detteId");
   }
   
 
