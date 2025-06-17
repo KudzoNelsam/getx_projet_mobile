@@ -5,6 +5,36 @@
       "nom": "Nelsam",
       "telephone": "773461882",
       "adresse": "Sicap Amitié"
+    },
+    {
+      "id": "40d4",
+      "nom": "Dina",
+      "telephone": "781870325",
+      "adresse": "Sciap Amitié 1"
+    },
+    {
+      "id": "7dd5",
+      "nom": "John Doe",
+      "telephone": "771001010",
+      "adresse": "Dakar"
+    },
+    {
+      "id": "a130",
+      "nom": "BBW",
+      "telephone": "771001011",
+      "adresse": "Dakar, Sénégal"
+    },
+    {
+      "id": "75b5",
+      "nom": "Patrick Jane",
+      "telephone": "771005050",
+      "adresse": "Sicap Liberte 1"
+    },
+    {
+      "id": "60d3",
+      "nom": "Test",
+      "telephone": "701567898",
+      "adresse": "Adresse 1"
     }
   ],
   "articles": [
@@ -26,6 +56,16 @@
       "montantPaye": 15000,
       "montantRestant": 0,
       "id": "e11b"
+    },
+    {
+      "montantPaye": 9000,
+      "montantRestant": 0,
+      "id": "2794"
+    },
+    {
+      "montantPaye": 3000,
+      "montantRestant": 0,
+      "id": "763f"
     }
   ],
   "lignes": [
@@ -34,6 +74,18 @@
       "qteCom": 30,
       "articleId": "123",
       "detteId": "e11b"
+    },
+    {
+      "id": "e275",
+      "qteCom": 30,
+      "articleId": "456",
+      "detteId": "2794"
+    },
+    {
+      "id": "e27f",
+      "qteCom": 10,
+      "articleId": "456",
+      "detteId": "763f"
     }
   ],
   "paiements": [
@@ -57,6 +109,41 @@
       "montantVerse": 2000,
       "clientId": "6494",
       "detteId": "e11b"
+    },
+    {
+      "id": "5d27",
+      "date": "2025-06-17",
+      "montantVerse": 100,
+      "clientId": "75b5",
+      "detteId": "2794"
+    },
+    {
+      "id": "d907",
+      "date": "2025-06-17",
+      "montantVerse": 7895,
+      "clientId": "75b5",
+      "detteId": "2794"
+    },
+    {
+      "id": "5007",
+      "date": "2025-06-17",
+      "montantVerse": 1000,
+      "clientId": "75b5",
+      "detteId": "2794"
+    },
+    {
+      "id": "0caf",
+      "date": "2025-06-17",
+      "montantVerse": 5,
+      "clientId": "75b5",
+      "detteId": "2794"
+    },
+    {
+      "id": "216f",
+      "date": "2025-06-17",
+      "montantVerse": 3000,
+      "clientId": "40d4",
+      "detteId": "763f"
     }
   ]
 }

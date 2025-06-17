@@ -12,7 +12,14 @@ class DettesListView extends GetView<DettesListController> {
   Widget build(BuildContext context) {
     return MainLayoutView(
       floatingActionButton: FloatingActionButton(
-        onPressed: () => Get.toNamed(Routes.DETTES_FORM),
+        onPressed: () async {
+          final result = await Get.toNamed(Routes.DETTES_FORM);
+          if (result == true) {
+            controller
+                .fetchDettes(); // ⬅️ Re-fetch automatique si une dette a été ajoutée
+          }
+        },
+
         child: const Icon(Icons.add),
       ),
       appBar: AppBar(
@@ -65,7 +72,9 @@ class DettesListView extends GetView<DettesListController> {
                   .toList();
 
               if (nonPaidDettes.isEmpty) {
-                return const Center(child: Text('Aucune dette à payer trouvée'));
+                return const Center(
+                  child: Text('Aucune dette à payer trouvée'),
+                );
               }
               return ListView.separated(
                 padding: const EdgeInsets.all(16),

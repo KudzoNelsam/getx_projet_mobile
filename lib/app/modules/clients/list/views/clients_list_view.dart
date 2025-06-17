@@ -9,6 +9,7 @@ class ClientsListView extends GetView<ClientsListController> {
 
   @override
   Widget build(BuildContext context) {
+    controller.onSearch(); // Initial search to load clients
     return MainLayoutView(
       appBar: AppBar(
         title: const Text('Liste des clients'),
@@ -20,7 +21,13 @@ class ClientsListView extends GetView<ClientsListController> {
         ],
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: () => Get.toNamed(Routes.CLIENTS_FORM),
+        onPressed: () async {
+          final result = await Get.toNamed(Routes.CLIENTS_FORM);
+          if (result == true) {
+            controller
+                .fetchClients(); // ⬅️ Re-fetch automatique si un client a été ajouté
+          }
+        },
         child: const Icon(Icons.add),
       ),
       body: Column(

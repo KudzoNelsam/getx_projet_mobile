@@ -48,7 +48,7 @@ class ClientsFormController extends GetxController {
         // Création
         final response = await service.createClient(data);
         if (response.statusCode == 201) {
-          Get.back();
+          Get.back(result: true);
           Get.snackbar('Succès', 'Client ajouté avec succès');
         } else {
           Get.snackbar('Erreur', 'Impossible d\'ajouter le client');
@@ -57,7 +57,7 @@ class ClientsFormController extends GetxController {
         // Edition
         final response = await service.updateClient(clientId!, data);
         if (response.statusCode == 200) {
-          Get.back();
+          Get.back(result: true);
           Get.snackbar('Succès', 'Client modifié avec succès');
         } else {
           Get.snackbar('Erreur', 'Impossible de modifier le client');
