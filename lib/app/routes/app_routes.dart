@@ -8,6 +8,11 @@ abstract class Routes {
   static const LOGIN = _Paths.LOGIN;
   static const SECOND_LAYOUT = _Paths.SECOND_LAYOUT;
   static const SETTINGS = _Paths.SETTINGS;
+  static const CLIENTS_FORM = _Paths.CLIENTS_FORM;
+  static const CLIENTS_LIST = _Paths.CLIENTS_LIST;
+  static const DETTES_LIST = _Paths.DETTES_LIST;
+  static const DETTES_FORM = _Paths.DETTES_FORM;
+  static const DETTES_DETAIL = _Paths.DETTES_DETAIL;
 }
 
 abstract class _Paths {
@@ -17,4 +22,9 @@ abstract class _Paths {
   static const LOGIN = '/login';
   static const SECOND_LAYOUT = '/second-layout';
   static const SETTINGS = '/settings';
+  static const CLIENTS_FORM = '/client/form';
+  static const CLIENTS_LIST = '/client/list';
+  static const DETTES_LIST = '/dettes/list';
+  static const DETTES_FORM = '/dettes/form';
+  static const DETTES_DETAIL = '/dettes/detail';
 }

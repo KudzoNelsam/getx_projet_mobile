@@ -11,11 +11,11 @@ class MainLayoutController extends GetxController {
   }
 
   final RxList<NavigationItem> navigationItems = [
-    NavigationItem(icon: Icons.home, label: "Accueil", route: Routes.HOME),
+    NavigationItem(icon: Icons.supervised_user_circle_sharp, label: "Clients", route: Routes.CLIENTS_LIST),
     NavigationItem(
-      icon: Icons.settings,
-      label: "Paramètres",
-      route: Routes.SETTINGS,
+      icon: Icons.account_balance,
+      label: "Dettes",
+      route: Routes.DETTES_LIST,
     ),
   ].obs;
 

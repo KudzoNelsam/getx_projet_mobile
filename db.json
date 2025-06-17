@@ -1,0 +1,28 @@
+{
+  "clients": [
+    
+  ],
+  "articles": [
+    {
+      "id": 1,
+      "libelle": "Stylo",
+      "qteStock": 100,
+      "prixVente": 1.5
+    },
+    {
+      "id": 2,
+      "libelle": "Cahier",
+      "qteStock": 200,
+      "prixVente": 2
+    }
+  ],
+  "dettes": [
+   
+  ],
+  "lignes": [
+   
+  ],
+  "paiements": [
+   
+  ]
+}
