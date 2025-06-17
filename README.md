@@ -1,16 +1,26 @@
-# default_projec
+# Gestion Dettes
 
-A new Flutter project.
+Ce projet est une application de gestion des dettes. Il permet de suivre les dettes entre différentes personnes, d’ajouter de nouvelles dettes, payer ses dettes
 
-## Getting Started
+## Fonctionnalités principales
 
-This project is a starting point for a Flutter application.
+- Ajouter une nouvelle dette
+- Lister toutes les dettes
+- Payer une dette
+- Lister les clients
+- Ajouter un client
+```
 
-A few resources to get you started if this is your first Flutter project:
+## Utilisation
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+Lancez l’application avec :
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+```bash
+flutter run
+```
+
+## Auteurs
+
+- GUMEDZOE-HOSETO ELOLO NELSAM KUDZO
+## Professeur
+- M. **Birane Baila WANE**
