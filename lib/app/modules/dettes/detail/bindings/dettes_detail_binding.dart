@@ -1,4 +1,5 @@
 import 'package:default_projec/app/constants/api_constants.dart';
+import 'package:default_projec/app/services/impl/article_service.dart';
 import 'package:default_projec/app/services/impl/client_service.dart';
 import 'package:default_projec/app/services/impl/dette_service.dart';
 import 'package:default_projec/app/services/impl/ligne_service.dart';
@@ -24,6 +25,9 @@ class DettesDetailBinding extends Bindings {
     );
      Get.lazyPut<LigneService>(
       () => LigneService(ApiConstants.baseUrl),
+    );
+     Get.lazyPut<ArticleService>(
+      () => ArticleService(ApiConstants.baseUrl),
     );
   }
 }

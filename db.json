@@ -1,149 +1,166 @@
 {
   "clients": [
     {
-      "id": "6494",
+      "id": "0ce6",
       "nom": "Nelsam",
       "telephone": "773461882",
-      "adresse": "Sicap Amitié"
-    },
-    {
-      "id": "40d4",
-      "nom": "Dina",
-      "telephone": "781870325",
-      "adresse": "Sciap Amitié 1"
-    },
-    {
-      "id": "7dd5",
-      "nom": "John Doe",
-      "telephone": "771001010",
-      "adresse": "Dakar"
-    },
-    {
-      "id": "a130",
-      "nom": "BBW",
-      "telephone": "771001011",
-      "adresse": "Dakar, Sénégal"
-    },
-    {
-      "id": "75b5",
-      "nom": "Patrick Jane",
-      "telephone": "771005050",
-      "adresse": "Sicap Liberte 1"
-    },
-    {
-      "id": "60d3",
-      "nom": "Test",
-      "telephone": "701567898",
-      "adresse": "Adresse 1"
+      "adresse": "Adresse1"
     }
   ],
   "articles": [
     {
-      "id": "123",
-      "libelle": "Stylo",
-      "qteStock": 100,
-      "prixVente": 500
+      "id": "A1",
+      "libelle": "Stylo Premium",
+      "qteStock": 50,
+      "prixVente": 800
     },
     {
-      "id": "456",
-      "libelle": "Cahier",
-      "qteStock": 200,
-      "prixVente": 300
+      "id": "A2",
+      "libelle": "Cahier A4 200p",
+      "qteStock": 30,
+      "prixVente": 1200
+    },
+    {
+      "id": "A3",
+      "libelle": "Classeur Rigide",
+      "qteStock": 45,
+      "prixVente": 1500
+    },
+    {
+      "id": "A4",
+      "libelle": "Pochette Plastique (paquet)",
+      "qteStock": 70,
+      "prixVente": 700
+    },
+    {
+      "id": "A5",
+      "libelle": "Colle Stick XL",
+      "qteStock": 60,
+      "prixVente": 600
+    },
+    {
+      "id": "A6",
+      "libelle": "Règle Métal 30cm",
+      "qteStock": 40,
+      "prixVente": 950
+    },
+    {
+      "id": "A7",
+      "libelle": "Marqueur Indélébile",
+      "qteStock": 35,
+      "prixVente": 750
+    },
+    {
+      "id": "A8",
+      "libelle": "Bloc-notes Pro",
+      "qteStock": 25,
+      "prixVente": 1150
+    },
+    {
+      "id": "A9",
+      "libelle": "Pochette Cartonnée",
+      "qteStock": 55,
+      "prixVente": 850
+    },
+    {
+      "id": "A10",
+      "libelle": "Crayon à papier HB",
+      "qteStock": 100,
+      "prixVente": 550
+    },
+    {
+      "id": "A11",
+      "libelle": "Feuille Bristol (paquet 50)",
+      "qteStock": 20,
+      "prixVente": 1700
+    },
+    {
+      "id": "A12",
+      "libelle": "Agrafeuse Métal",
+      "qteStock": 18,
+      "prixVente": 2100
+    },
+    {
+      "id": "A13",
+      "libelle": "Boîte de punaises",
+      "qteStock": 80,
+      "prixVente": 650
+    },
+    {
+      "id": "A14",
+      "libelle": "Correcteur liquide",
+      "qteStock": 60,
+      "prixVente": 900
+    },
+    {
+      "id": "A15",
+      "libelle": "Calculatrice Collège",
+      "qteStock": 10,
+      "prixVente": 2500
+    },
+    {
+      "id": "A16",
+      "libelle": "Surligneur Fluo Pack",
+      "qteStock": 45,
+      "prixVente": 1300
+    },
+    {
+      "id": "A17",
+      "libelle": "Porte-vues 60p",
+      "qteStock": 22,
+      "prixVente": 1250
+    },
+    {
+      "id": "A18",
+      "libelle": "Sac à dos scolaire",
+      "qteStock": 8,
+      "prixVente": 5800
+    },
+    {
+      "id": "A19",
+      "libelle": "Trousse double",
+      "qteStock": 32,
+      "prixVente": 950
+    },
+    {
+      "id": "A20",
+      "libelle": "Crayons de couleur (12)",
+      "qteStock": 75,
+      "prixVente": 800
     }
   ],
   "dettes": [
     {
-      "montantPaye": 15000,
+      "id": "0c22",
+      "date": "2025-06-17T00:00:00.000",
+      "montantDette": 12000,
+      "montantPaye": 12000,
       "montantRestant": 0,
-      "id": "e11b"
-    },
-    {
-      "montantPaye": 9000,
-      "montantRestant": 0,
-      "id": "2794"
-    },
-    {
-      "montantPaye": 3000,
-      "montantRestant": 0,
-      "id": "763f"
+      "clientId": "0ce6"
     }
   ],
   "lignes": [
     {
-      "id": "ccff",
-      "qteCom": 30,
-      "articleId": "123",
-      "detteId": "e11b"
-    },
-    {
-      "id": "e275",
-      "qteCom": 30,
-      "articleId": "456",
-      "detteId": "2794"
-    },
-    {
-      "id": "e27f",
+      "id": "2591",
       "qteCom": 10,
-      "articleId": "456",
-      "detteId": "763f"
+      "articleId": "A2",
+      "detteId": "0c22"
     }
   ],
   "paiements": [
     {
-      "id": "ee47",
+      "id": "d829",
       "date": "2025-06-17",
       "montantVerse": 3000,
-      "clientId": "6494",
-      "detteId": "e11b"
+      "clientId": "0ce6",
+      "detteId": "0c22"
     },
     {
-      "id": "8ea1",
+      "id": "18cb",
       "date": "2025-06-17",
-      "montantVerse": 10000,
-      "clientId": "6494",
-      "detteId": "e11b"
-    },
-    {
-      "id": "3e39",
-      "date": "2025-06-17",
-      "montantVerse": 2000,
-      "clientId": "6494",
-      "detteId": "e11b"
-    },
-    {
-      "id": "5d27",
-      "date": "2025-06-17",
-      "montantVerse": 100,
-      "clientId": "75b5",
-      "detteId": "2794"
-    },
-    {
-      "id": "d907",
-      "date": "2025-06-17",
-      "montantVerse": 7895,
-      "clientId": "75b5",
-      "detteId": "2794"
-    },
-    {
-      "id": "5007",
-      "date": "2025-06-17",
-      "montantVerse": 1000,
-      "clientId": "75b5",
-      "detteId": "2794"
-    },
-    {
-      "id": "0caf",
-      "date": "2025-06-17",
-      "montantVerse": 5,
-      "clientId": "75b5",
-      "detteId": "2794"
-    },
-    {
-      "id": "216f",
-      "date": "2025-06-17",
-      "montantVerse": 3000,
-      "clientId": "40d4",
-      "detteId": "763f"
+      "montantVerse": 9000,
+      "clientId": "0ce6",
+      "detteId": "0c22"
     }
   ]
 }

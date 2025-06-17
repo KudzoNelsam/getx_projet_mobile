@@ -16,7 +16,7 @@ class DettesListView extends GetView<DettesListController> {
           final result = await Get.toNamed(Routes.DETTES_FORM);
           if (result == true) {
             controller
-                .fetchDettes(); // ⬅️ Re-fetch automatique si une dette a été ajoutée
+                .fetchDettes();
           }
         },
 

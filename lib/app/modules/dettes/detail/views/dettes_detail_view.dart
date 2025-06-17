@@ -181,73 +181,81 @@ class DettesDetailView extends GetView<DettesDetailController> {
   }
 
   Widget _buildArticlesSection() {
-    final lignes = controller.lignes;
-    return Card(
-      elevation: 2,
-      child: Padding(
-        padding: const EdgeInsets.all(16),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            const Text(
-              'Articles achetés',
-              style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
-            ),
-            const SizedBox(height: 12),
-            if (lignes.isEmpty)
-              const Text('Aucun article trouvé')
-            else
-              Column(
-                children: lignes.map((ligne) {
-                  final article = ligne['article'] ?? {};
-                  return Container(
-                    padding: const EdgeInsets.symmetric(vertical: 8),
-                    decoration: BoxDecoration(
-                      border: Border(
-                        bottom: BorderSide(color: Colors.grey[200]!),
-                      ),
+  final lignes = controller.lignes;
+  return Card(
+    elevation: 2,
+    child: Padding(
+      padding: const EdgeInsets.all(16),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          const Text(
+            'Articles achetés',
+            style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+          ),
+          const SizedBox(height: 12),
+          if (lignes.isEmpty)
+            const Text('Aucun article trouvé')
+          else
+            Column(
+              children: lignes.map((ligne) {
+                // CORRECTION: Utilisation sécurisée de getArticleById
+                final article = controller.getArticleById(ligne['articleId']);
+                final prixUnitaire = double.tryParse(article['prixVente']?.toString() ?? '0') ?? 0.0;
+                final quantite = int.tryParse(ligne['qteCom']?.toString() ?? '0') ?? 0;
+                final sousTotal = prixUnitaire * quantite;
+                
+                return Container(
+                  padding: const EdgeInsets.symmetric(vertical: 8),
+                  decoration: BoxDecoration(
+                    border: Border(
+                      bottom: BorderSide(color: Colors.grey[200]!),
                     ),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Expanded(
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Text(
-                                article['libelle'] ?? 'Article #${ligne['articleId']}',
-                                style: const TextStyle(fontWeight: FontWeight.w500),
-                              ),
-                              Text(
-                                'Prix unitaire: ${double.tryParse('${article['prixVente']}')?.toStringAsFixed(2) ?? 'N/A'} CFA',
-                                style: TextStyle(color: Colors.grey[600], fontSize: 12),
-                              ),
-                            ],
-                          ),
-                        ),
-                        Column(
-                          crossAxisAlignment: CrossAxisAlignment.end,
+                  ),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Expanded(
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            Text('Qté: ${ligne['qteCom']}', style: const TextStyle(fontWeight: FontWeight.w500)),
                             Text(
-                              'Sous-total: ${(double.tryParse('${article['prixVente']}') ?? 0 * (ligne['qteCom'] ?? 0)).toStringAsFixed(2)} CFA',
-                              style: const TextStyle(
-                                fontWeight: FontWeight.bold,
-                                color: Colors.blue,
-                              ),
+                              article['libelle'] ?? 'Article #${ligne['articleId']}',
+                              style: const TextStyle(fontWeight: FontWeight.w500),
+                            ),
+                            Text(
+                              'Prix unitaire: ${prixUnitaire.toStringAsFixed(2)} CFA',
+                              style: TextStyle(color: Colors.grey[600], fontSize: 12),
                             ),
                           ],
                         ),
-                      ],
-                    ),
-                  );
-                }).toList(),
-              ),
-          ],
-        ),
+                      ),
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.end,
+                        children: [
+                          Text(
+                            'Qté: $quantite', 
+                            style: const TextStyle(fontWeight: FontWeight.w500)
+                          ),
+                          Text(
+                            'Sous-total: ${sousTotal.toStringAsFixed(2)} CFA',
+                            style: const TextStyle(
+                              fontWeight: FontWeight.bold,
+                              color: Colors.blue,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ],
+                  ),
+                );
+              }).toList(),
+            ),
+        ],
       ),
-    );
-  }
+    ),
+  );
+}
 
   Widget _buildPaiementsSection() {
     final paiements = controller.paiements;
